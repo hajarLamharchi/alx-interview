@@ -14,5 +14,7 @@ def canUnlockAll(boxes):
         for key in box:
             keys.append(key)
             if (boxes.index(box) not in keys):
-                canOpen = False
+                break
+    if not all(i in keys for i in range(len(boxes))):
+        canOpen = False
     return canOpen
