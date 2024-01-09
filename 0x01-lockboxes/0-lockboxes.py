@@ -9,20 +9,9 @@ def canUnlockAll(boxes):
         and it returns true if all the boxes
         can be opened and false otherwise"""
 
-    """keys = [0]
+    keys = {i: box for i, box in enumerate(boxes)}
+    keysSet = {0}
     canOpen = True
-    for box in boxes:
-        for key in box:
-            keys.append(key)
-            if (boxes.index(box) not in keys):
-                canOpen = False
-    return canOpen"""
-
-    keys = {0: []}
-    keysSet = set([0])
-    canOpen = True
-    for box in boxes:
-        keys[boxes.index(box)] = box
     for key, value in keys.items():
         for val in value:
             if (val != key):
