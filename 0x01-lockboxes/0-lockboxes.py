@@ -17,14 +17,16 @@ def canUnlockAll(boxes):
                 canOpen = False
     return canOpen"""
 
-    keys = {}
+    keys = {0: []}
     keysSet = set([0])
     canOpen = True
     for box in boxes:
         keys[boxes.index(box)] = box
     for key, value in keys.items():
         for val in value:
-            keysSet.add(val)
-            if (key not in keysSet and key in keys[key]):
-                canOpen = False
+            if (val != key):
+                keysSet.add(val)
+    for key, value in keys.items():
+        if (key not in keysSet):
+            canOpen = False
     return canOpen
