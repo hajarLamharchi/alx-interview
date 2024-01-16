@@ -11,10 +11,10 @@ def minOperations(n):
     copy = 1
     rep = 1
     op = 0
-    while(rep < n and rep * 2 <= n):
+    while(rep < n):
         if (n % rep == 0):
-            rep *= 2
             copy = rep
+            rep *= 2
             op += 2
         else:
             rep += copy
