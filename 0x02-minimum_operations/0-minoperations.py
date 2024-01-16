@@ -6,7 +6,7 @@ def minOperations(n):
     """This function takes as argument
         n: number of H characters that should be printed
         and returns the number of operations to achieve that"""
-    if (n <= 0 and isinstance(n, int)):
+    if (not isinstance(n, int) or n <= 0):
         return 0
     copy = 1
     rep = 1
