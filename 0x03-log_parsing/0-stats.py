@@ -41,6 +41,8 @@ try:
             for key, val in my_dict.items():
                 print("{}: {}".format(key, val))
 except KeyboardInterrupt:
+    pass
+finally:
     print("File size: {}".format(total_size))
     for key, val in my_dict.items():
         print("{}: {}".format(key, val))
