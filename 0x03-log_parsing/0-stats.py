@@ -33,11 +33,12 @@ try:
                 my_dict[parts[-2]] = 1
             else:
                 my_dict[parts[-2]] += 1
+            my_dict = dict(sorted(my_dict.items()))
         except Exception as err:
             continue
         if i % 10 == 0:
             print("File size: {}".format(total_size))
-            for key, val in sorted(my_dict.items()):
+            for key, val in my_dict.items():
                 print("{}: {}".format(key, val))
 except Exception as err:
     raise
