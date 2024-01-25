@@ -11,12 +11,10 @@ import re
 
 def valid_format(line):
     """checks if the line have a valid format"""
-    pattern = r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - '
-    r'\[([^\]]+)\] "GET \/projects\/260 HTTP\/1\.1" (\d{3}) (\d+)$'
+    pattern = r'^(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) - ' \
+              r'\[([^\]]+)\] "GET \/projects\/260 HTTP\/1\.1" (\d{3}) (\d+)$'
     match = re.match(pattern, line)
-    if match:
-        return True
-    return False
+    return bool(match)
 
 
 try:
