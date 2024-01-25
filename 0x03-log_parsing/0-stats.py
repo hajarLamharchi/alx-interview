@@ -23,10 +23,10 @@ try:
     my_dict = {}
     total_size = 0
     for i, line in enumerate(stdin, start=1):
-        """line = line.strip()"""
-        if not valid_format(line):
-            continue
+        line = line.strip()
         parts = line.split()
+        if not valid_format(line) and len(parts) != 9:
+            continue
         total_size += int(parts[-1])
         if parts[-2] not in my_dict:
             my_dict[parts[-2]] = 1
