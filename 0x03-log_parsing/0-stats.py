@@ -32,7 +32,7 @@ try:
             else:
                 my_dict[parts[-2]] += 1
         except Exception as err:
-            pass
+            continue
         my_dict = dict(sorted(my_dict.items()))
         if i % 10 == 0:
             print("File size: {}".format(total_size))
