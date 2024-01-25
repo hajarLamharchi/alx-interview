@@ -27,7 +27,10 @@ try:
         if not valid_format(line):
             continue
         parts = line.split()
-        total_size += int(parts[-1])
+        try:
+            total_size += int(parts[-1])
+        except Exception as err:
+            pass
         if parts[-2] not in my_dict:
             my_dict[parts[-2]] = 1
         else:
