@@ -23,7 +23,7 @@ try:
     my_dict = {}
     total_size = 0
     for i, line in enumerate(stdin, start=1):
-        line = line.strip()
+        """line = line.strip()"""
         if not valid_format(line):
             continue
         parts = line.split()
