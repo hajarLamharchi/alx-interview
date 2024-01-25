@@ -5,7 +5,7 @@ and after every 10 lines or keyboard interruption
 it prints File size: <total size>
 <status code>: <number> for every status code"""
 
-import sys
+from sys import stdin
 import re
 
 
@@ -20,11 +20,9 @@ def valid_format(line):
 
 
 try:
-    i = 0
     my_dict = {}
     total_size = 0
-    for line in sys.stdin:
-        i += 1
+    for i, line in enumerate(stdin, start=1):
         line = line.strip()
         if not valid_format(line):
             continue
@@ -35,11 +33,10 @@ try:
         else:
             my_dict[parts[-2]] += 1
         my_dict = dict(sorted(my_dict.items()))
-        if i == 10:
+        if i % 10 == 0:
             print("File size: {}".format(total_size))
             for key, val in my_dict.items():
                 print("{}: {}".format(key, val))
-                i = 0
 except Exception as err:
     pass
 finally:
