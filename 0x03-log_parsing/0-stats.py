@@ -38,7 +38,7 @@ try:
             for key, val in my_dict.items():
                 print("{}: {}".format(key, val))
 except Exception as err:
-    pass
+    raise
 finally:
     print("File size: {}".format(total_size))
     for key, val in my_dict.items():
