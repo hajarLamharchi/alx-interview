@@ -29,13 +29,13 @@ try:
         parts = line.split()
         try:
             total_size += int(parts[-1])
-        except Exception as err:
-            pass
-        if parts[-2] not in my_dict:
-            my_dict[parts[-2]] = 1
-        else:
-            my_dict[parts[-2]] += 1
-        my_dict = dict(sorted(my_dict.items()))
+            if parts[-2] not in my_dict:
+                my_dict[parts[-2]] = 1
+            else:
+                my_dict[parts[-2]] += 1
+            my_dict = dict(sorted(my_dict.items()))
+        except BaseException:
+            continue
         if i % 10 == 0:
             print("File size: {}".format(total_size))
             for key, val in my_dict.items():
