@@ -27,10 +27,11 @@ try:
         parts = line.split()
         try:
             total_size += int(parts[-1])
-            if parts[-2] not in my_dict:
-                my_dict[parts[-2]] = 1
+            status = int(parts[-2])
+            if status not in my_dict:
+                my_dict[status] = 1
             else:
-                my_dict[parts[-2]] += 1
+                my_dict[status] += 1
         except Exception as err:
             continue
         my_dict = dict(sorted(my_dict.items()))
