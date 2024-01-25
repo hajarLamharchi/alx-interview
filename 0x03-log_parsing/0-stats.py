@@ -26,7 +26,7 @@ try:
         line = line.strip()
         if not valid_format(line):
             continue
-        parts = line.split(" ")
+        parts = line.split()
         total_size += int(parts[-1])
         if parts[-2] not in my_dict:
             my_dict[parts[-2]] = 1
