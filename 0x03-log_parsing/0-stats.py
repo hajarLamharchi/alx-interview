@@ -33,7 +33,6 @@ try:
                 my_dict[parts[-2]] = 1
             else:
                 my_dict[parts[-2]] += 1
-            my_dict = dict(my_dict.items())
         except Exception as err:
             continue
         if i % 10 == 0:
