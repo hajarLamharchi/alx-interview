@@ -32,14 +32,14 @@ try:
                 my_dict[status] = 1
             else:
                 my_dict[status] += 1
-        except Exception as err:
+        except (ValueError, IndexError):
             continue
         my_dict = dict(sorted(my_dict.items()))
         if i % 10 == 0:
             print("File size: {}".format(total_size))
             for key, val in my_dict.items():
                 print("{}: {}".format(key, val))
-except Exception as err:
+except KeyboardInterrupt:
     pass
 finally:
     print("File size: {}".format(total_size))
