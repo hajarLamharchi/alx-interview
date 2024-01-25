@@ -39,7 +39,7 @@ try:
             for key, val in my_dict.items():
                 print("{}: {}".format(key, val))
 except Exception as err:
-    raise
+    pass
 finally:
     print("File size: {}".format(total_size))
     for key, val in my_dict.items():
