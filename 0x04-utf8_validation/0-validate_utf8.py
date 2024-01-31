@@ -7,7 +7,7 @@ def validUTF8(data):
     is_valid = True
     for c in data:
         try:
-            b = c.to_bytes(8, byteorder='big')
+            b = c.to_bytes(8, byteorder='little')
             b.decode('utf-8')
             continue
         except UnicodeDecodeError:
