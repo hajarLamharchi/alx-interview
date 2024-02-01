@@ -8,10 +8,9 @@ def validUTF8(data):
     for c in data:
         try:
             b = c.to_bytes(8, byteorder='little')
-            if c < 128:
-                b.decode('ascii')
             b.decode('utf-8')
             continue
         except UnicodeDecodeError:
             is_valid = False
+            break
     return is_valid
